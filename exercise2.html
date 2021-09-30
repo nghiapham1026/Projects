@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 2 Project</title>
+    <h1><strong>Exercise 2</strong></h1>
+</head>
+<body>
+    <fieldset><h3><i>Enter radius of a circle:</i></h3>
+        <form name="circleForm" onsubmit="calc(); return false">
+            <label for="name">Enter a number:</label><br>
+            <input type="number" name="radius" id="radius" placeholder="radius" required><br>
+            <button type="submit">Calculate Area</button>
+            <button type="reset">Reset value</button>
+        </form>
+        <div>
+            <textarea id="result" name="result" rows="4" cols="50">The area of this circle is:</textarea>
+        </div>
+    </fieldset>
+</body>
+<script src="exercise2.js"></script>
+</html>
