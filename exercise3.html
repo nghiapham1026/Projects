@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="">
+    <script>
+        function testJS() {
+            var b = document.getElementById('form').value,
+            url = 'http://ex3_validate.html?form=' + encodeURIComponent(b);
+            document.location.href = url;
+            var error = document.forms["form"]["name"]["phoneno"]["zipcode"].value;
+
+            if (error="") {
+                var x = document.getElementById("error");
+                x.style.borderColor ="red";
+                return False;
+            }
+        }
+    </script>
+</head>
+<body>
+    <form action="ex3_validate.html" method="get" onsubmit="return testJS()" name="form" id="form">
+        <p>Enter Title (optional):</p>
+        <input type="title" name="title" id="error">
+        <p>Enter Name (required):</p>
+        <input type="name" name="name" id="error" required>
+        <p>Enter Email Address (optional):</p>
+        <input type="email" name="email" id="error">
+        <p>Enter Phone Number (required):</p>
+        <input type="tel" name="phoneno" id="error" required pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+        <p>Enter Zipcode (required):</p>
+        <input type="number" name="zipcode" min="11111" max="99999" id="error" required>
+        <p><input type="submit" name="submit" value="Submit"></p>
+    </form>
+</body>
+</html>
